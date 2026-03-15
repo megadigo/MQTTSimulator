@@ -1,4 +1,4 @@
-(Engrave text: MedTronic)
+(Engrave text: complete word)
 G90
 G21
 G17
