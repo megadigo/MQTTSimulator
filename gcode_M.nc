@@ -1,0 +1,66 @@
+(Cut a big M - 60mm wide x 80mm tall)
+G90
+G21
+G17
+G0 Z5
+G0 X0 Y0
+M3 S12000
+
+( Left vertical leg )
+G0 X0 Y0
+G1 Z-2 F200
+G1 X0 Y80 F300
+
+( Left diagonal down to centre-notch )
+G1 X30 Y40
+
+( Right diagonal up to top-right )
+G1 X60 Y80
+
+( Right vertical leg down )
+G1 X60 Y0
+G0 Z5
+
+M5
+G0 Z10
+G0 X0 Y0
+M30
+
+G1 X85 Y20
+G0 Z5
+
+( o )
+G0 X90 Y5
+G1 Z-2 F200
+G1 X100 Y5 F300
+G1 X100 Y15
+G1 X90 Y15
+G1 X90 Y5
+G0 Z5
+
+( n )
+G0 X105 Y0
+G1 Z-2 F200
+G1 X105 Y20 F300
+G1 X115 Y0
+G1 X115 Y20
+G0 Z5
+
+( i )
+G0 X120 Y20
+G1 Z-2 F200
+G1 X120 Y0 F300
+G0 Z5
+
+( c )
+G0 X130 Y5
+G1 Z-2 F200
+G1 X140 Y5 F300
+G1 X140 Y15
+G1 X130 Y15
+G0 Z5
+
+M5
+G0 Z10
+G0 X0 Y0
+M30
