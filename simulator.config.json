@@ -4,5 +4,6 @@
   "cuttingTemperature": 80.0,
   "temperatureNoise": 1.5,
   "anomalyRiseRate": 5.0,
-  "anomalyShutdownThreshold": 120.0
+  "anomalyShutdownThreshold": 120.0,
+  "stepIntervalSeconds": 1
 }

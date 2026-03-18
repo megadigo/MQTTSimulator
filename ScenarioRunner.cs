@@ -15,7 +15,8 @@ namespace MQTTSimulator
         double CuttingTemperature = 80.0,
         double TemperatureNoise = 1.5,
         double AnomalyRiseRate = 5.0,
-        double AnomalyShutdownThreshold = 120.0);
+        double AnomalyShutdownThreshold = 120.0,
+        double StepIntervalSeconds = 0.5);  // seconds between MQTT publishes (higher = slower)
     /// <summary>Filters out [Debug] lines from console output when debug mode is off.</summary>
     internal sealed class DebugFilterWriter : TextWriter
     {
@@ -54,8 +55,8 @@ namespace MQTTSimulator
         // CNC simulation parameters
         private const double DefaultRapidRate = 3000.0; // mm/min for G0 moves
         private const double DefaultFeedRate = 300.0;   // mm/min fallback when F not yet specified
-        private const double StepInterval = 0.1;        // seconds between MQTT publishes
         private const double SafeZ = 5.0;               // safe Z fallback
+        private double StepInterval => _config.StepIntervalSeconds;
         private readonly Random _rng = new Random();
         private string _ncFilePath = "gcode.nc";
         private SimulatorConfig _config = new SimulatorConfig();
